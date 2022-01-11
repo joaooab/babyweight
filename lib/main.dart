@@ -1,5 +1,6 @@
-import 'package:babyweight/page/help_page.dart';
-import 'package:babyweight/page/home_page.dart';
+import 'package:babyweight/page/help/help_page.dart';
+import 'package:babyweight/page/home/home_page.dart';
+import 'package:babyweight/page/table/table_page.dart';
 import 'package:babyweight/route/route.dart';
 import 'package:babyweight/util/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.help: (context) => HelpPage(),
+        Routes.table: (context) => TablePage(),
       },
     );
   }

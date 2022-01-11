@@ -6,11 +6,11 @@ import 'package:babyweight/util/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../util/calculator/calculator_weight.dart';
+import '../../util/calculator/calculator_weight.dart';
 
 class HomePage extends StatefulWidget {
-  static const String routeName = '/home';
-  static const String title = 'home';
+  static const String ROUTE_NAME = '/home';
+  static const String TITLE = 'Home';
 
   @override
   _HomePage createState() => _HomePage();
@@ -35,7 +35,7 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: mainDrawer(context),
-      appBar: mainAppBar(HomePage.title),
+      appBar: mainAppBar(HomePage.TITLE),
       body: Center(
         child: Container(
           decoration: BoxDecoration(color: Constants.colorLightBG),

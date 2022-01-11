@@ -1,5 +1,6 @@
-import 'package:babyweight/page/help_page.dart';
-import 'package:babyweight/page/home_page.dart';
+import 'package:babyweight/page/help/help_page.dart';
+import 'package:babyweight/page/home/home_page.dart';
+import 'package:babyweight/page/table/table_page.dart';
 import 'package:babyweight/route/route.dart';
 import 'package:babyweight/util/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +31,16 @@ Drawer mainDrawer(BuildContext context) {
         ),
         ListTile(
           leading: Icon(Icons.home),
-          title: const Text(HomePage.title),
+          title: const Text(HomePage.TITLE),
           onTap: () {
             Navigator.pushReplacementNamed(context, Routes.home);
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.table_chart),
+          title: const Text(TablePage.TITLE),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, Routes.table);
           },
         ),
         ListTile(

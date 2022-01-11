@@ -6,22 +6,34 @@ class WeightReference {
 
   WeightReference(this.gestationalAge, this.percentiles);
 
+  static final List<WeightReference> references = createWeightReferenceList();
+
   static WeightReference? fromTable(final String gestationalAge) {
-    for (var reference in tableWeightReference) {
-      final List<String> fields = reference.split(";");
-      if (gestationalAge == fields[0]) {
-        final int gestationalAge = int.tryParse(fields[0]) ?? 0;
-        final List<Percentile> percentiles = [
-          Percentile(int.tryParse(fields[1]) ?? 0, 3),
-          Percentile(int.tryParse(fields[2]) ?? 0, 10),
-          Percentile(int.tryParse(fields[3]) ?? 0, 50),
-          Percentile(int.tryParse(fields[4]) ?? 0, 90),
-          Percentile(int.tryParse(fields[5]) ?? 0, 97),
-        ];
-        return WeightReference(gestationalAge, percentiles);
+    for (var reference in references) {
+      if (gestationalAge == reference.gestationalAge.toString()) {
+        return reference;
       }
     }
+
     return null;
+  }
+
+  static List<WeightReference> createWeightReferenceList() {
+    List<WeightReference> weightReferenceList = [];
+    for (var reference in tableWeightReference) {
+      final List<String> fields = reference.split(";");
+      final int gestationalAge = int.tryParse(fields[0]) ?? 0;
+      final List<Percentile> percentiles = [
+        Percentile(int.tryParse(fields[1]) ?? 0, 3),
+        Percentile(int.tryParse(fields[2]) ?? 0, 10),
+        Percentile(int.tryParse(fields[3]) ?? 0, 50),
+        Percentile(int.tryParse(fields[4]) ?? 0, 90),
+        Percentile(int.tryParse(fields[5]) ?? 0, 97),
+      ];
+      weightReferenceList.add(WeightReference(gestationalAge, percentiles));
+    }
+
+    return weightReferenceList;
   }
 }
 
