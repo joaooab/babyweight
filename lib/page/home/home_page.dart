@@ -16,8 +16,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  static const String BUTTON_AGE_NAME = "Idade gestacional";
-  static const String BUTTON_WEIGHT_NAME = "Peso fetal";
+  static const String BUTTON_AGE_NAME = "Idade gestacional(semanas)";
+  static const String BUTTON_WEIGHT_NAME = "Peso fetal(g)";
 
   final TextEditingController _controllerAge = TextEditingController();
   final TextEditingController _controllerWeight = TextEditingController();
