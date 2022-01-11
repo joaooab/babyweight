@@ -1,9 +1,9 @@
 import 'package:babyweight/model/weight_reference.dart';
-import 'package:babyweight/page/table/table_widget.dart';
+import 'package:babyweight/page/table/table_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PortraitTable extends TableWidget {
+class PortraitTableBuilder extends TableBuilder {
   @override
   Widget build() {
     return SafeArea(

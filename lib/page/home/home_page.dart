@@ -3,10 +3,9 @@ import 'package:babyweight/widget/main_drawer.dart';
 import 'package:babyweight/model/percentile.dart';
 import 'package:babyweight/model/weight_reference.dart';
 import 'package:babyweight/util/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../util/calculator/calculator_weight.dart';
+import '../../util/calculator_weight.dart';
 
 class HomePage extends StatefulWidget {
   static const String ROUTE_NAME = '/home';
@@ -75,6 +74,7 @@ class _HomePage extends State<HomePage> {
                             child: Column(
                               children: <Widget>[
                                 Text(_percentile?.getName() ?? "",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
@@ -84,6 +84,7 @@ class _HomePage extends State<HomePage> {
                                   padding: const EdgeInsets.only(top: 16.0),
                                   child: Text(
                                       _percentile?.getDescription() ?? "",
+                                      textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 18,

@@ -1,9 +1,8 @@
 import 'package:babyweight/model/weight_reference.dart';
-import 'package:babyweight/page/table/table_widget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:babyweight/page/table/table_builder.dart';
 import 'package:flutter/material.dart';
 
-class LandscapeTable extends TableWidget {
+class LandscapeTableBuilder extends TableBuilder {
   @override
   Widget build() {
     return ListView(children: [

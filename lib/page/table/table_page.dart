@@ -1,5 +1,5 @@
-import 'package:babyweight/page/table/table_landscape_widget.dart';
-import 'package:babyweight/page/table/table_portrait_widget.dart';
+import 'package:babyweight/page/table/table_landscape_builder.dart';
+import 'package:babyweight/page/table/table_portrait_builder.dart';
 import 'package:babyweight/widget/main_app_bar.dart';
 import 'package:babyweight/widget/main_drawer.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,9 +26,9 @@ class _TablePage extends State<TablePage> {
     return OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) {
         if (orientation == Orientation.portrait) {
-          return PortraitTable().build();
+          return PortraitTableBuilder().build();
         } else {
-          return LandscapeTable().build();
+          return LandscapeTableBuilder().build();
         }
       },
     );

@@ -1,7 +1,7 @@
 import 'package:babyweight/util/constants.dart';
 import 'package:flutter/material.dart';
 
-abstract class TableWidget {
+abstract class TableBuilder {
 
   List<DataColumn> createHeaders() {
     return List.from(createAgeHeader())..addAll(createPercentileHeaders());

@@ -3,14 +3,21 @@ import 'package:babyweight/page/home/home_page.dart';
 import 'package:babyweight/page/table/table_page.dart';
 import 'package:babyweight/route/route.dart';
 import 'package:babyweight/util/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,5 +32,15 @@ class MyApp extends StatelessWidget {
         Routes.table: (context) => TablePage(),
       },
     );
+  }
+}
+
+class ApplciationState extends ChangeNotifier {
+  ApplciationState() {
+    init();
+  }
+
+  Future<void> init() async {
+    await Firebase.initializeApp();
   }
 }

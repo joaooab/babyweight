@@ -1,6 +1,6 @@
 import 'package:babyweight/model/percentile.dart';
 import 'package:babyweight/model/weight_reference.dart';
-import 'package:babyweight/util/calculator/calculator_weight.dart';
+import 'package:babyweight/util/calculator_weight.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 
