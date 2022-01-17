@@ -11,24 +11,27 @@ Drawer mainDrawer(BuildContext context) {
       padding: EdgeInsets.zero,
       children: [
         DrawerHeader(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: <Color>[
-                Constants.colorLightPrimary,
-                Constants.colorDarkPrimary
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: <Color>[
+                  Constants.colorLightPrimary,
+                  Constants.colorDarkPrimary
+                ],
+              ),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  Constants.appName,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
               ],
-            ),
-          ),
-          child: Text(
-            Constants.appName,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-            ),
-          ),
-        ),
+            )),
         ListTile(
           leading: Icon(Icons.home),
           title: const Text(HomePage.TITLE),
