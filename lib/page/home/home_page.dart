@@ -19,6 +19,24 @@ class _HomePage extends State<HomePage> {
   static const String BUTTON_AGE_NAME = "Idade gestacional(semanas)";
   static const String BUTTON_WEIGHT_NAME = "Peso fetal(g)";
 
+  BannerAd? _addBanner;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final adState = Provider.of<AdState>(context);
+    adState.initializaion.then((status) => {
+          setState(() {
+            _addBanner = BannerAd(
+              adUnitId: adState.bannerAdUnitId,
+              size: AdSize.banner,
+              request: AdRequest(),
+              listener: adState.adListener,
+            )..load();
+          }),
+        });
+  }
+
   final TextEditingController _controllerAge = TextEditingController();
   final TextEditingController _controllerWeight = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -100,6 +118,7 @@ class _HomePage extends State<HomePage> {
                   ),
                 ),
               ),
+              _createAddContainer(),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -188,4 +207,16 @@ class _HomePage extends State<HomePage> {
       keyboardType: TextInputType.number,
     );
   }
+
+  Widget _createAddContainer() {
+    if (_addBanner == null) {
+      return SizedBox(height: 50);
+    } else {
+      return Container(
+        height: 50,
+        child: AdWidget(ad: _addBanner!),
+      );
+    }
+  }
+
 }
