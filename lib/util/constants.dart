@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static String appName = "Percentil de Peso Fetal";
+  static String appName = "Calculadora de Percentil Fetal";
 
   static Color colorLightPrimary = Color(0xFFFDE38E);
   static Color colorDarkPrimary = Color(0xFFF7C55F);

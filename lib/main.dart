@@ -5,7 +5,10 @@ import 'package:babyweight/route/route.dart';
 import 'package:babyweight/util/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 
+import 'ad_state.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -13,7 +16,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(App());
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+  runApp(
+      Provider.value(
+          value: adState,
+          builder: (context, child) => App(),
+      )
+  );
 }
 
 class App extends StatelessWidget {

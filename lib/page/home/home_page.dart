@@ -1,9 +1,14 @@
-import 'package:babyweight/widget/main_app_bar.dart';
-import 'package:babyweight/widget/main_drawer.dart';
+import 'dart:io';
+
+import 'package:babyweight/ad_state.dart';
 import 'package:babyweight/model/percentile.dart';
 import 'package:babyweight/model/weight_reference.dart';
 import 'package:babyweight/util/constants.dart';
+import 'package:babyweight/widget/main_app_bar.dart';
+import 'package:babyweight/widget/main_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 
 import '../../util/calculator_weight.dart';
 
@@ -16,8 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  static const String BUTTON_AGE_NAME = "Idade gestacional(semanas)";
-  static const String BUTTON_WEIGHT_NAME = "Peso fetal(g)";
+  static const String BUTTON_AGE_NAME = "Idade gestacional (semanas)";
+  static const String BUTTON_WEIGHT_NAME = "Peso fetal (g)";
 
   BannerAd? _addBanner;
 
@@ -218,5 +223,4 @@ class _HomePage extends State<HomePage> {
       );
     }
   }
-
 }
