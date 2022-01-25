@@ -6,8 +6,8 @@ class Percentile {
   static final String NAME_MAX_PERCENTIL = "Percentil maior que 97";
   static final String DESCRIPTION_NORMAL =
       "Peso adequado para idade gestacional";
-  static final String DESCRIPTION_LOWER = "Limite inferior da normalidade";
-  static final String DESCRIPTION_HIGHER = "Limite superior da normalidade";
+  static final String DESCRIPTION_LOWER = "Feto Pequeno para Idade Gestacional";
+  static final String DESCRIPTION_HIGHER = "Feto Grande para Idade Gestacional";
 
   final int weight;
   final int value;
